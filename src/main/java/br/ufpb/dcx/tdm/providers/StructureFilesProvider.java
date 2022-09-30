@@ -24,7 +24,6 @@ public class StructureFilesProvider implements TreeStructureProvider {
 
     @Override
     public @NotNull Collection<AbstractTreeNode<?>> modify(@NotNull AbstractTreeNode<?> parent, @NotNull Collection<AbstractTreeNode<?>> children, ViewSettings settings) {
-
         List<AbstractTreeNode<?>> nodes = new LinkedList<>();
         LocalDateTime now = LocalDateTime.now();
         ProjectStateService service = ProjectStateService.getInstance(parent.getProject());
@@ -33,7 +32,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
             if (child instanceof PsiFileNode) {
                 VirtualFile file = ((PsiFileNode) child).getVirtualFile();
                 if (file != null && Objects.equals(file.getExtension(), "java")) {
-                    if (diff >= 1) {
+                    if (diff >= 10) {
                         lastUpdate = now;
                         try {
                             assert service != null;
