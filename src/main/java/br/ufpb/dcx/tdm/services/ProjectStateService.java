@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 
-@State(name = "Plugin Tracy", storages = {@Storage("plugin-tracy.xml")})
+@State(name = "Tracy", storages = {@Storage("tracy.xml")})
 public class ProjectStateService implements PersistentStateComponent<ProjectState> {
     private static final Logger LOG = Logger.getInstance(ProjectStateService.class);
 

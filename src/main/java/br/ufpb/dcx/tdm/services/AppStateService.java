@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@State(name = "plugin-tracy", storages = {@Storage("colors.xml")})
+@State(name = "tracy", storages = {@Storage("colors.xml")})
 public class AppStateService implements PersistentStateComponent<AppState> {
 
     private final AppState state = new AppState();
