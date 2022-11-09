@@ -1,1 +1,1 @@
-rootProject.name = "tdm"
+rootProject.name = "plugintracy"

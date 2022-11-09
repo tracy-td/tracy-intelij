@@ -3,11 +3,8 @@ package br.ufpb.dcx.tdm.state;
 import br.ufpb.dcx.tdm.services.ProjectStateService;
 import br.ufpb.dcx.tdm.state.beans.ColorSettings;
 import br.ufpb.dcx.tdm.state.beans.ProjectState;
-import br.ufpb.dcx.tdm.utils.UtilsUI;
 import com.intellij.openapi.diagnostic.Logger;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class ProjectColors {
     private static final Logger LOG = Logger.getInstance(ProjectColors.class);

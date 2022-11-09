@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.intellij") version "1.6.0"
 }
 
-group = "br.ufpb.dcx"
+group = "org.tracy"
 version = "1.0-SNAPSHOT"
 
 repositories {

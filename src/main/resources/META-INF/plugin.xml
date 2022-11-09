@@ -1,11 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
+<idea-plugin >
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>br.ufpb.dcx.tdm</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Tdm</name>
+    <name>plugintracy</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="raimundo.marcos@dcx.ufpb.br" url="https://www.gihub.com/marcosludgerio">Raimundo Marcos</vendor>
@@ -14,7 +14,8 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-   <h1> This is a plugin test for manager technical debt </h1>
+   <h1> Artifact Priority Sorter for Tracy-TD </h1>
+   <h2> Highlights project files in color according to their Tracy-TD classification. </h2>
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
