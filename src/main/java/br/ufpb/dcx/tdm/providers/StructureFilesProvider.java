@@ -1,7 +1,6 @@
 package br.ufpb.dcx.tdm.providers;
 
 import br.ufpb.dcx.tdm.services.ProjectStateService;
-import br.ufpb.dcx.tdm.services.RequestFileService;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
@@ -15,7 +14,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
 
 public class StructureFilesProvider implements TreeStructureProvider {
     private LocalDateTime lastUpdate;

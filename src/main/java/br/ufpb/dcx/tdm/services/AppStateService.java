@@ -1,12 +1,10 @@
 package br.ufpb.dcx.tdm.services;
 
-import br.ufpb.dcx.tdm.state.beans.ColorSettings;
 import br.ufpb.dcx.tdm.state.beans.AppState;
+import br.ufpb.dcx.tdm.state.beans.ColorSettings;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

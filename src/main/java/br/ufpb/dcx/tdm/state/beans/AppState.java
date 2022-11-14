@@ -1,7 +1,6 @@
 package br.ufpb.dcx.tdm.state.beans;
 
 import br.ufpb.dcx.tdm.state.DefaultSettings;
-import br.ufpb.dcx.tdm.state.beans.ColorSettings;
 import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.XCollection;
 
