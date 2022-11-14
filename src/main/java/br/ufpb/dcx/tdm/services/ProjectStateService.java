@@ -7,12 +7,13 @@ import br.ufpb.dcx.tdm.state.beans.ProjectState;
 import br.ufpb.dcx.tdm.utils.UtilsUI;
 import com.intellij.configurationStore.StateStorageManagerKt;
 import com.intellij.openapi.components.*;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -20,7 +21,7 @@ import java.net.URISyntaxException;
 
 @State(name = "Tracy", storages = {@Storage("tracy.xml")})
 public class ProjectStateService implements PersistentStateComponent<ProjectState> {
-    private static final Logger LOG = Logger.getInstance(ProjectStateService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProjectStateService.class);
 
     private final ProjectState state = new ProjectState();
     private Project project;
@@ -29,8 +30,13 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
 
     RequestFileService requestFileService = new RequestFileService();
     public void updateColorFile(VirtualFile file) throws IOException, URISyntaxException {
-         Integer classification = requestFileService.getClassification(file.getNameWithoutExtension());
-         this.files.addNodes(file, classification);
+         Integer classification = requestFileService.getClassification(file.getName());
+         LOG.warn("File classification returned with value {}", classification);
+
+         if(classification <= 3) this.files.addNodes(file, 4);
+         else if (classification <= 6) this.files.addNodes(file, 2);
+         else if (classification <= 10) this.files.addNodes(file, 1);
+         else this.files.addNodes(file, classification);
     }
 
     @Nullable

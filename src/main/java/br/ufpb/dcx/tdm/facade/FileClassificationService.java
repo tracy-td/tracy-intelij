@@ -7,5 +7,5 @@ import retrofit2.http.Query;
 
 public interface FileClassificationService {
     @GET("/api/v1/classification")
-    Call<File> fileClassification(@Query("name") String name);
+    Call<Integer> fileClassification(@Query("name") String name);
 }

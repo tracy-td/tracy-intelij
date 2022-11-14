@@ -1,12 +1,15 @@
 package br.ufpb.dcx.tdm.providers;
 
 import br.ufpb.dcx.tdm.services.ProjectStateService;
+import br.ufpb.dcx.tdm.services.RequestFileService;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -16,6 +19,8 @@ import java.util.*;
 
 public class StructureFilesProvider implements TreeStructureProvider {
     private LocalDateTime lastUpdate;
+
+    private static final Logger LOG = LoggerFactory.getLogger(StructureFilesProvider.class);
 
     public StructureFilesProvider() {
         super();
@@ -38,7 +43,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
                             assert service != null;
                             service.updateColorFile(file);
                         } catch (IOException | URISyntaxException e) {
-                            System.out.println(e.getMessage());
+                            LOG.error("File classification return a error: {}",e.getMessage());
                         }
                     }
                 }
