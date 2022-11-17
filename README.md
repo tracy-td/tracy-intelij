@@ -12,12 +12,12 @@ of priority and impact on the business.
 
 ## Priority Classification By Color
 
-| Color                                          | Classification |
-|------------------------------------------------|----------------|
-| <strong style="color:red"> Red </strong>       | Critical       |
-| <strong style="color:yellow"> Yellow </strong> | High           |
-| <strong style="color:blue"> Blue </strong>     | Medium         |
-| <strong style="color:green"> Green </strong>   | Low            |
+| Color  | Classification |
+|--------|----------------|
+| Red    | Critical       |
+| Yellow | High           |
+| Blue   | Medium         |
+| Green  | Low            |
 
 
 ## After prioritization, the artifacts looked like:
