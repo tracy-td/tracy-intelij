@@ -29,18 +29,20 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
     public ProjectFiles files = new ProjectFiles(this);
 
     RequestFileService requestFileService = new RequestFileService();
-    public void updateColorFile(VirtualFile file) throws IOException, URISyntaxException {
-         Integer classification = requestFileService.getClassification(file.getName());
-         LOG.warn("File classification returned with value {}", classification);
 
-         if(classification <= 3) this.files.addNodes(file, 4);
-         else if (classification <= 6) this.files.addNodes(file, 2);
-         else if (classification <= 10) this.files.addNodes(file, 1);
-         else this.files.addNodes(file, classification);
+    public void updateColorFile(VirtualFile file) throws IOException, URISyntaxException {
+
+        Integer classification = requestFileService.getClassification(file.getName());
+        LOG.warn("File classification returned with value {}", classification);
+
+        if (classification <= 3) this.files.addNodes(file, 4);
+        else if (classification <= 6) this.files.addNodes(file, 2);
+        else if (classification <= 10) this.files.addNodes(file, 1);
+        else this.files.addNodes(file, classification);
     }
 
     @Nullable
-    public static ProjectStateService getInstance(Project e){
+    public static ProjectStateService getInstance(Project e) {
         ProjectStateService instance = ServiceManager.getService(e, ProjectStateService.class);
         instance.project = e;
         return instance;
@@ -69,5 +71,9 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
         } catch (Exception ignored) {
             LOG.debug("Can't force save state in older versions prior to 191.4212.41");
         }
+    }
+
+    public boolean isAvaliable(){
+        return requestFileService.isAvailable();
     }
 }

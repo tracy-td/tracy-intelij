@@ -1,5 +1,6 @@
 package br.ufpb.dcx.tdm.providers;
 
+import br.ufpb.dcx.tdm.notification.ConnectionErrorNotifier;
 import br.ufpb.dcx.tdm.services.ProjectStateService;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
@@ -34,6 +35,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
         List<AbstractTreeNode<?>> nodes = new LinkedList<>();
         LocalDateTime now = LocalDateTime.now();
         ProjectStateService service = ProjectStateService.getInstance(parent.getProject());
+        assert service != null;
         long diff = ChronoUnit.SECONDS.between(lastUpdate, now);
         for (AbstractTreeNode child : children) {
             if (child instanceof PsiFileNode) {
@@ -42,10 +44,10 @@ public class StructureFilesProvider implements TreeStructureProvider {
                     if (diff >= 10) {
                         lastUpdate = now;
                         try {
-                            assert service != null;
                             service.updateColorFile(file);
                         } catch (IOException | URISyntaxException e) {
-                            LOG.error("File classification return a error: {}",e.getMessage());
+                            LOG.error("File classification return a error: {}", e.getMessage());
+                            ConnectionErrorNotifier.notify(e.getMessage());
                         }
                     }
                 }
