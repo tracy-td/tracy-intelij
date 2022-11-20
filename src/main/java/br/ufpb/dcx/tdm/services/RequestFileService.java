@@ -25,17 +25,4 @@ public class RequestFileService {
         }
         return 1000;
     }
-
-    public boolean isAvailable(){
-        Response<Integer> response;
-        try {
-            response = new RetrofitInit().fileClassificationService().fileClassification("").execute();;
-            return response.body() != null;
-        } catch (IOException ex) {
-            ConnectionErrorNotifier.notify(ex.getMessage());
-            LOG.error(ex.getMessage());
-        }
-        return false;
-    }
-
 }

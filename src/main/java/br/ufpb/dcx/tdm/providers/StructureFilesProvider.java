@@ -37,7 +37,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
         ProjectStateService service = ProjectStateService.getInstance(parent.getProject());
         assert service != null;
         long diff = ChronoUnit.SECONDS.between(lastUpdate, now);
-        for (AbstractTreeNode child : children) {
+        children.forEach(child -> {
             if (child instanceof PsiFileNode) {
                 VirtualFile file = ((PsiFileNode) child).getVirtualFile();
                 if (file != null && Objects.equals(file.getExtension(), "java")) {
@@ -53,7 +53,8 @@ public class StructureFilesProvider implements TreeStructureProvider {
                 }
             }
             nodes.add(child);
-        }
+        });
+
         return nodes;
     }
 }

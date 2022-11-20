@@ -72,8 +72,4 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
             LOG.debug("Can't force save state in older versions prior to 191.4212.41");
         }
     }
-
-    public boolean isAvaliable(){
-        return requestFileService.isAvailable();
-    }
 }
