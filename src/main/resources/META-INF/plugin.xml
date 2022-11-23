@@ -8,7 +8,7 @@
     <name>Tracy</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="rodrigor@dcx.ufpb.br" url="https://ayty.org/">Tracy-TD</vendor>
+    <vendor email="rodrigor@dcx.ufpb.br" url="http://localhost:8080/">Tracy-TD</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
@@ -37,8 +37,11 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <editorTabColorProvider implementation="br.ufpb.dcx.tdm.providers.ColorProviderUpdate" order="first"/>
+        <postStartupActivity implementation="br.ufpb.dcx.tdm.activities.TracyPluginStartupActivity" />
         <treeStructureProvider implementation="br.ufpb.dcx.tdm.providers.StructureFilesProvider"/>
         <projectService serviceImplementation="br.ufpb.dcx.tdm.services.ProjectStateService"/>
         <applicationService serviceImplementation="br.ufpb.dcx.tdm.services.AppStateService"/>
+        <notificationGroup displayType="BALLOON" id="Tracy Plugin" isLogByDefault="true" />
+        
     </extensions>
 </idea-plugin>

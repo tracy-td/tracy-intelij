@@ -1,8 +1,7 @@
 package br.ufpb.dcx.tdm.services;
 
 import br.ufpb.dcx.tdm.facade.RetrofitInit;
-import br.ufpb.dcx.tdm.notification.ConnectionErrorNotifier;
-import okhttp3.Request;
+import br.ufpb.dcx.tdm.notification.TracyNotification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import retrofit2.Response;
@@ -20,7 +19,7 @@ public class RequestFileService {
             LOG.warn("Response return with status code {}", response.code());
             if (response.code() == 200) return response.body();
         } catch (IOException ex) {
-            ConnectionErrorNotifier.notify(ex.getMessage());
+            TracyNotification.notify(ex.getMessage());
             LOG.error(ex.getMessage());
         }
         return 1000;

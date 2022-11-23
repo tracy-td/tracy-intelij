@@ -1,11 +1,13 @@
 package br.ufpb.dcx.tdm.providers;
 
-import br.ufpb.dcx.tdm.notification.ConnectionErrorNotifier;
+import br.ufpb.dcx.tdm.notification.TracyNotification;
 import br.ufpb.dcx.tdm.services.ProjectStateService;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.application.ApplicationNamesInfo;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -13,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
@@ -35,6 +38,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
         List<AbstractTreeNode<?>> nodes = new LinkedList<>();
         LocalDateTime now = LocalDateTime.now();
         ProjectStateService service = ProjectStateService.getInstance(parent.getProject());
+
         assert service != null;
         long diff = ChronoUnit.SECONDS.between(lastUpdate, now);
         children.forEach(child -> {
@@ -47,7 +51,7 @@ public class StructureFilesProvider implements TreeStructureProvider {
                             service.updateColorFile(file);
                         } catch (IOException | URISyntaxException e) {
                             LOG.error("File classification return a error: {}", e.getMessage());
-                            ConnectionErrorNotifier.notify(e.getMessage());
+                            TracyNotification.notify(e.getMessage());
                         }
                     }
                 }
@@ -58,5 +62,6 @@ public class StructureFilesProvider implements TreeStructureProvider {
         return nodes;
     }
 }
+
 
 
