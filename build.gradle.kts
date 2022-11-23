@@ -15,7 +15,6 @@ repositories {
 intellij {
     version.set("2021.3")
     type.set("IC") // Target IDE Platform
-
     plugins.set(listOf(/* list of plugins */))
 
 
@@ -32,7 +31,9 @@ tasks {
         sourceCompatibility = "11"
         targetCompatibility = "11"
     }
+    runIde{
 
+    }
     patchPluginXml {
         sinceBuild.set("213")
         untilBuild.set("223.*")
