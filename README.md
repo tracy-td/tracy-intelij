@@ -1,7 +1,9 @@
-# Artifact Priority Sorter for Tracy-TD
-##  Plugin for Jetbrains IDEs. 
+
+# Artifact Priority Sorter for [Tracy-TD](https://tracy-td.github.io/)
+##  Plugin for [JetBrains IDE](https://www.jetbrains.com/). 
 Highlights project files in color according to their **Tracy-TD** classification.
 
+## 📝 Objective
 When the developer is working,
 it is necessary for him to realize which artifacts are most important to the business
 
@@ -20,5 +22,25 @@ of priority and impact on the business.
 | Green  | Low            |
 
 
-## After prioritization, the artifacts looked like:
-![Highlight menu](images/tree-color-class-presentation.png)
+## ▶ Install
+All instructions can be found at [Install plugins](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk).
+
+
+## ✨ Expected Result
+<img src="./images/tree-color-class-presentation.png" alt="Result" width="380"/>
+
+
+## 🔗 Resources
+- Quick Start Guide https://plugins.jetbrains.com/docs/intellij/basics.html
+- Main types of Plugins https://plugins.jetbrains.com/docs/intellij/types-of-plugins.html
+- IntelliJ Platform Plugin Template https://github.com/JetBrains/intellij-platform-plugin-template
+- Extensions Explorer https://plugins.jetbrains.com/intellij-platform-explorer
+- UI Guidelines https://jetbrains.design/intellij/
+- Plugin Configuration File https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
+- Actions https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+- Extensions https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html#using-extension-points
+- Gradle IntelliJ Plugin tasks https://github.com/JetBrains/gradle-intellij-plugin#tasks
+- Tracy-TD https://tracy-td.github.io/
+
+## License
+[MIT License](./LICENSE)
