@@ -13,7 +13,7 @@ public class TracyNotification {
     private static final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("Connection Error", NotificationDisplayType.BALLOON, true);
 
     private static String notificationGroupId = "Tracy Plugin";
-    private static String changelogLink = "https://tracy-td.github.io/";
+    private static String changelogLink = "https://github.com/tracy-td/tracy-intelij/blob/main/CHANGELOG.md";
     private static String repoGithub = "https://github.com/tracy-td/tracy-intelij";
 
     private static String welcomeMessage = "Tracy plugin has been successfully loaded";
