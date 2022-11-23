@@ -42,6 +42,5 @@
         <projectService serviceImplementation="br.ufpb.dcx.tdm.services.ProjectStateService"/>
         <applicationService serviceImplementation="br.ufpb.dcx.tdm.services.AppStateService"/>
         <notificationGroup displayType="BALLOON" id="Tracy Plugin" isLogByDefault="true" />
-        
     </extensions>
 </idea-plugin>

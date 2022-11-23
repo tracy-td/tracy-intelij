@@ -1,4 +1,4 @@
 # Changelog
 
 ## 1.0.0
-- First version
+- This version is the first and some bugs could be found 
