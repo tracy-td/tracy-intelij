@@ -46,14 +46,23 @@ at [Install plugins](https://www.jetbrains.com/help/idea/managing-plugins.html#i
 - Tracy-TD https://tracy-td.github.io/
 
 ## Community
-<a href = "https://www.instagram.com/ayty.ufpb/" target="_blank">
+<a href="https://www.linkedin.com/company/ayty-ufpb/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin"/>
+</a> 
+<a href = "https://www.instagram.com/ayty.ufpb/">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"  alt="instagram"/>
 </a>
-<a href = "https://discord.com/invite/AwaqbGPRkd" target="_blank">
+<a href = "https://discord.com/invite/AwaqbGPRkd">
     <img src="https://img.shields.io/badge/-Discord-%237289da?style=for-the-badge&logo=discord&logoColor=white" alt="discord" />
 </a>
-<a href = "mailto:rodrigor@rodrigor.com" target="_blank">
+<a href = "mailto:rodrigor@rodrigor.com">
      <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="gmail"/>
+</a>
+<a href = "https://www.youtube.com/playlist?list=PLAPbm9i5bB1XtW8Vutnely0sM-atIIlSv">
+     <img src="https://img.shields.io/badge/-Youtube-%23E51C44?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/>
+</a>
+<a href = "https://open.spotify.com/show/00qERFSDhoxtgBejIw7a5V">
+     <img src="https://img.shields.io/badge/-Podcast-%2381b71a?style=for-the-badge&logo=spotify&logoColor=white" alt="spotify"/>
 </a>
 
 ## License
