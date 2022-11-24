@@ -1,4 +1,4 @@
-// Copyright 2022 Ayty s.r.o. Use of this source code is governed by the license that can be found in the LICENSE file.
+// Copyright 2022 Ayty. Use of this source code is governed by the license that can be found in the LICENSE file.
 package br.ufpb.dcx.tdm.providers;
 
 import br.ufpb.dcx.tdm.notification.TracyNotification;

@@ -1,3 +1,4 @@
+// Copyright 2022 Ayty. Use of this source code is governed by the license that can be found in the LICENSE file.
 package br.ufpb.dcx.tdm.utils;
 
 import com.intellij.openapi.Disposable;
