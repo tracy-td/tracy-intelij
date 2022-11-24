@@ -1,3 +1,5 @@
+// Copyright 2022 Ayty s.r.o. Use of this source code is governed by the license that can be found in the LICENSE file.
+
 package br.ufpb.dcx.tdm.facade;
 
 import br.ufpb.dcx.tdm.utils.ReadPropertiesUtil;
@@ -42,11 +44,9 @@ public class RetrofitInit {
     }
 
     /**
-     * Default constructor
-     * Recovery the base url from configuration file
-     * Initialize the retrofit builder and add thr Gson Converter factory
+     * This method is responsible for retrieving the artifact classification using the FileClassificationService interface
      *
-     * @see GsonConverterFactory
+     * @see Retrofit#create
      */
     public FileClassificationService fileClassificationService() {
         return this.retrofit.create(FileClassificationService.class);
