@@ -1,5 +1,5 @@
 # Artifact Priority Sorter for [Tracy-TD](https://tracy-td.github.io/)
-
+![license](https://img.shields.io/bower/l/bootstrap)
 ## Plugin for [JetBrains IDE](https://www.jetbrains.com/).
 
 Highlights project files in color according to their **Tracy-TD** classification.
@@ -62,7 +62,7 @@ at [Install plugins](https://www.jetbrains.com/help/idea/managing-plugins.html#i
      <img src="https://img.shields.io/badge/-Youtube-%23E51C44?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube"/>
 </a>
 <a href = "https://open.spotify.com/show/00qERFSDhoxtgBejIw7a5V">
-     <img src="https://img.shields.io/badge/-Podcast-%2381b71a?style=for-the-badge&logo=spotify&logoColor=white" alt="spotify"/>
+     <img src="https://img.shields.io/badge/-Spotify-%2381b71a?style=for-the-badge&logo=spotify&logoColor=white" alt="spotify"/>
 </a>
 
 ## License
