@@ -3,7 +3,6 @@ package br.ufpb.dcx.tdm.providers;
 
 import br.ufpb.dcx.tdm.services.ProjectStateService;
 import br.ufpb.dcx.tdm.state.beans.ColorSettings;
-import com.intellij.notification.NotificationAction;
 import com.intellij.openapi.fileEditor.impl.EditorTabColorProvider;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -14,11 +13,10 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 import java.io.IOException;
 
-
 /**
  * This class is responsible for changing the colors of the files
  * in the editor tab and in the elements tree on the left
- * ColorProviderUpdate get the current color from the file in the view provider
+ * ColorUpdateProvider get the current color from the file in the view provider
  * and tab and changes them to the color specified in the colorSettings class
  *
  * @see EditorTabColorProvider
@@ -27,7 +25,7 @@ import java.io.IOException;
  *
  * @author Marcos Ludgério
  */
-public class ColorProviderUpdate implements EditorTabColorProvider, DumbAware {
+public class ColorUpdateProvider implements EditorTabColorProvider, DumbAware {
 
     /**
      * This method retrieves the current color from the file within a project

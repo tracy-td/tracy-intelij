@@ -36,7 +36,7 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <editorTabColorProvider implementation="br.ufpb.dcx.tdm.providers.ColorProviderUpdate" order="first"/>
+        <editorTabColorProvider implementation="br.ufpb.dcx.tdm.providers.ColorUpdateProvider" order="first"/>
         <postStartupActivity implementation="br.ufpb.dcx.tdm.activities.TracyPluginStartupActivity" />
         <treeStructureProvider implementation="br.ufpb.dcx.tdm.providers.StructureFilesProvider"/>
         <projectService serviceImplementation="br.ufpb.dcx.tdm.services.ProjectStateService"/>
