@@ -20,18 +20,21 @@ intellij {
 
 }
 
-dependencies{
+dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.5.0")
     implementation("com.squareup.retrofit2:converter-gson:2.4.0")
 }
 
+
+
 tasks {
     // Set the JVM compatibility versions
+
     withType<JavaCompile> {
         sourceCompatibility = "11"
         targetCompatibility = "11"
     }
-    runIde{
+    runIde {
 
     }
     patchPluginXml {
