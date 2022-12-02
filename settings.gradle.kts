@@ -1,0 +1,1 @@
+rootProject.name = "tracy-plugin"
