@@ -1,12 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-<<<<<<< HEAD
-    <id>org.tracy</id>
-=======
     <id>org.tracy.tracy-plugin</id>
->>>>>>> bfa0828099c73b360467dfb558a1ce8fcb7ae6ca
-
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>Tracy</name>
@@ -18,28 +13,19 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-<<<<<<< HEAD
         <h1> Artifact Priority Sorter for Tracy-TD </h1>
-=======
-    <h1> Artifact Priority Sorter for Tracy-TD </h1>
->>>>>>> bfa0828099c73b360467dfb558a1ce8fcb7ae6ca
         <h2> Highlights project files in color according to their Tracy-TD classification. </h2>
         <p>Highlights project files in color according to their <strong>Tracy-TD</strong> classification.</p>
         <p>When the developer is working, it is necessary for him to realize which artifacts are most important to the business.</p>
         <p>The plugin allows the IntelliJ interface to classify artifacts with colors, according to their criticality for the business.</p>
         <p>The colors of the artifacts are changed according to the level of priority and impact on the business:</p>
-
         <ul>
             <li>Red: Critical priority</li>
             <li>Yellow: High priority</li>
             <li>Blue: Medium priority</li>
             <li>Green: Low priority</li>
         </ul>
-<<<<<<< HEAD
-    ]]></description>
-=======
   ]]></description>
->>>>>>> bfa0828099c73b360467dfb558a1ce8fcb7ae6ca
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -48,19 +34,11 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-<<<<<<< HEAD
-        <editorTabColorProvider implementation="br.ufpb.dcx.tdm.providers.ColorUpdateProvider" order="first"/>
-        <postStartupActivity implementation="br.ufpb.dcx.tdm.activities.TracyPluginStartupActivity" />
-        <treeStructureProvider implementation="br.ufpb.dcx.tdm.providers.StructureFilesProvider"/>
-        <projectService serviceImplementation="br.ufpb.dcx.tdm.services.ProjectStateService"/>
-        <applicationService serviceImplementation="br.ufpb.dcx.tdm.services.AppStateService"/>
-=======
         <editorTabColorProvider implementation="org.tracy.tracyplugin.providers.ColorUpdateProvider" order="first"/>
         <postStartupActivity implementation="org.tracy.tracyplugin.activities.TracyPluginStartupActivity" />
         <treeStructureProvider implementation="org.tracy.tracyplugin.providers.StructureFileProvider"/>
         <projectService serviceImplementation="org.tracy.tracyplugin.services.ProjectStateService"/>
         <applicationService serviceImplementation="org.tracy.tracyplugin.services.AppStateService"/>
->>>>>>> bfa0828099c73b360467dfb558a1ce8fcb7ae6ca
         <notificationGroup displayType="BALLOON" id="Tracy Plugin" isLogByDefault="true" />
     </extensions>
 </idea-plugin>
