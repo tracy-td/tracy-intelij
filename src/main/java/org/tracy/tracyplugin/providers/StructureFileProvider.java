@@ -79,8 +79,8 @@ public class StructureFileProvider implements TreeStructureProvider {
                         try {
                             service.updateColorFile(file);
                         } catch (IOException | URISyntaxException e) {
+                            TracyNotification.notifyNoConnectionTracy(service.getProject(), e.getMessage());
                             LOG.error("File classification return a error: {}", e.getMessage());
-                            TracyNotification.notify(e.getMessage());
                         }
                     }
                 }

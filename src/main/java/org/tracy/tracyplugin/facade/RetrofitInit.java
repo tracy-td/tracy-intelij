@@ -21,6 +21,9 @@ public class RetrofitInit {
      */
     private final Retrofit retrofit;
 
+
+    private String baseUrl = "http://td/";
+
     /**
      * Retrofit reference object responsible for the configuration
      */
@@ -28,9 +31,10 @@ public class RetrofitInit {
 
     public RetrofitInit() {
         assert pluginConfig != null;
-        String BASE_URL = pluginConfig.getVendorUrl();
-        assert BASE_URL != null;
-        retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+        baseUrl = this.getBaseUrl();
+        System.out.println("BASE URL: " + baseUrl);
+        assert baseUrl != null;
+        retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
     }
 
     /**
@@ -40,5 +44,13 @@ public class RetrofitInit {
      */
     public FileClassification fileClassificationService() {
         return this.retrofit.create(FileClassification.class);
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 }
