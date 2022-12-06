@@ -7,6 +7,7 @@ import org.tracy.tracyplugin.state.beans.ColorSettings;
 import org.tracy.tracyplugin.state.beans.ProjectState;
 
 public class ProjectColors {
+
     private static final Logger LOG = Logger.getInstance(ProjectColors.class);
 
     private final ProjectStateService projectStateService;

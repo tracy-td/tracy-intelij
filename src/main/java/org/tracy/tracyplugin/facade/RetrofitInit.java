@@ -24,7 +24,6 @@ public class RetrofitInit {
 
     private FileUtils fileUtils;
 
-    private String baseUrl = "http://url/";
 
     /**
      * Retrofit reference object responsible for the configuration
@@ -34,8 +33,7 @@ public class RetrofitInit {
     public RetrofitInit() {
         assert pluginConfig != null;
         this.fileUtils = new FileUtils();
-        baseUrl = fileUtils.getBaseUrlFromFile("base.txt");
-        System.out.println("BASE URL: " + baseUrl);
+        String baseUrl = fileUtils.getBaseUrlFromFile("base.txt");
         assert baseUrl != null;
         retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
     }
@@ -47,13 +45,5 @@ public class RetrofitInit {
      */
     public FileClassification fileClassificationService() {
         return this.retrofit.create(FileClassification.class);
-    }
-
-    public String getBaseUrl() {
-        return baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
     }
 }
