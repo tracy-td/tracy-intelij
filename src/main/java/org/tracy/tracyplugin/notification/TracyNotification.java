@@ -5,10 +5,9 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.notification.*;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
-import org.tracy.tracyplugin.facade.RetrofitInit;
+import org.tracy.tracyplugin.utils.FileUtils;
 
 import javax.swing.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 /**
@@ -23,7 +22,6 @@ public class TracyNotification {
     private static final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("Connection Error", NotificationDisplayType.BALLOON, true);
 
     private static String notificationGroupId = "Tracy Plugin";
-
 
     private static String changelogLink = "https://github.com/tracy-td/tracy-intelij/blob/main/CHANGELOG.md";
     private static String repoGithub = "https://github.com/tracy-td/tracy-intelij";
@@ -57,7 +55,6 @@ public class TracyNotification {
      * @param project the project notification
      */
     public static void notifyFirstlyDownloaded(Project project) {
-
         String title = "Tracy plugin is running";
         Notification notification = NotificationGroupManager.getInstance().getNotificationGroup(notificationGroupId).createNotification(title, welcomeMessage, NotificationType.INFORMATION);
         addNotificationActions(notification);
@@ -69,10 +66,10 @@ public class TracyNotification {
      *
      * @param project the project notification
      */
-    public static void notifyNoConnectionTracy(Project project, String content, RetrofitInit retrofitInit) {
+    public static void notifyNoConnectionTracy(Project project, String content) {
         String title = "Tracy error connection";
         Notification notification = NotificationGroupManager.getInstance().getNotificationGroup(notificationGroupId).createNotification(title, content, NotificationType.ERROR);
-        addDialogErrorMessage(project, notification, retrofitInit);
+        addDialogErrorMessage(project, notification);
         notification.notify(project);
     }
 
@@ -81,14 +78,12 @@ public class TracyNotification {
      *
      * @param notification the notification that will have the actions added
      */
-    public static void addDialogErrorMessage(Project project, Notification notification, RetrofitInit retrofitInit) {
-        AtomicReference<String> baseUrlUpdated = new AtomicReference<>(retrofitInit.getBaseUrl());
+    public static void addDialogErrorMessage(Project project, Notification notification) {
+        FileUtils fileUtils = new FileUtils();
         AnAction showDialogBaseUrl = NotificationAction.createSimple("Update URL Tracy", () -> {
-            baseUrlUpdated.set(JOptionPane.showInputDialog("Insert Tracy-TD base URL: "));
+            String baseUrlUpdated = JOptionPane.showInputDialog("Insert Tracy-TD base URL: ");
+            fileUtils.updateBaseUrlInTheFile("base.txt", baseUrlUpdated);
         });
-        retrofitInit.setBaseUrl(baseUrlUpdated.get());
-        System.out.println("Update base url");
-        System.out.println(retrofitInit.getBaseUrl());
         System.out.println("ESSA MERDAAAAAA");
         notification.addAction(showDialogBaseUrl);
     }

@@ -4,6 +4,7 @@ package org.tracy.tracyplugin.facade;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManagerCore;
 import com.intellij.openapi.extensions.PluginId;
+import org.tracy.tracyplugin.utils.FileUtils;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -21,8 +22,9 @@ public class RetrofitInit {
      */
     private final Retrofit retrofit;
 
+    private FileUtils fileUtils;
 
-    private String baseUrl = "http://td/";
+    private String baseUrl = "http://url/";
 
     /**
      * Retrofit reference object responsible for the configuration
@@ -31,7 +33,8 @@ public class RetrofitInit {
 
     public RetrofitInit() {
         assert pluginConfig != null;
-        baseUrl = this.getBaseUrl();
+        this.fileUtils = new FileUtils();
+        baseUrl = fileUtils.getBaseUrlFromFile("base.txt");
         System.out.println("BASE URL: " + baseUrl);
         assert baseUrl != null;
         retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
