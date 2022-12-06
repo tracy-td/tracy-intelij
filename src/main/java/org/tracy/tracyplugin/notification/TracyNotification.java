@@ -82,7 +82,7 @@ public class TracyNotification {
         FileUtils fileUtils = new FileUtils();
         AnAction showDialogBaseUrl = NotificationAction.createSimple("Update URL Tracy", () -> {
             String baseUrlUpdated = JOptionPane.showInputDialog("Insert Tracy-TD base URL: ");
-            fileUtils.updateBaseUrlInTheFile("base.txt", baseUrlUpdated);
+            fileUtils.updateBaseUrlInTheFile(project, baseUrlUpdated);
         });
         notification.addAction(showDialogBaseUrl);
     }

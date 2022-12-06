@@ -4,6 +4,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.tracy.tracyplugin.services.ProjectStateService;
+import org.tracy.tracyplugin.state.beans.BaseUrlState;
 import org.tracy.tracyplugin.state.beans.HighlightedFile;
 import org.tracy.tracyplugin.state.beans.ProjectState;
 import org.tracy.tracyplugin.utils.UtilsUI;
@@ -45,5 +46,9 @@ public class ProjectFiles {
             }
         }
         return colorId;
+    }
+
+    public void updateBaseUrl(String newBaseUrl){
+        this.projectState.baseState = new BaseUrlState(newBaseUrl);
     }
 }

@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tracy.tracyplugin.state.ProjectColors;
 import org.tracy.tracyplugin.state.ProjectFiles;
+import org.tracy.tracyplugin.state.beans.BaseUrlState;
 import org.tracy.tracyplugin.state.beans.ProjectState;
 import org.tracy.tracyplugin.utils.UtilsUI;
 
@@ -26,12 +27,11 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
     private Project project;
     public ProjectColors colors = new ProjectColors(this);
     public ProjectFiles files = new ProjectFiles(this);
-
     RequestFileService requestFileService = new RequestFileService();
 
     public void updateColorFile(VirtualFile file) throws IOException, URISyntaxException {
 
-        Integer classification = requestFileService.getClassification(file.getName());
+        Integer classification = requestFileService.getClassification(project, file.getName());
         LOG.warn("File classification returned with value {}", classification);
 
         if (classification <= 3) this.files.addNodes(file, 4);
@@ -71,5 +71,14 @@ public class ProjectStateService implements PersistentStateComponent<ProjectStat
         } catch (Exception ignored) {
             LOG.debug("Can't force save state in older versions prior to 191.4212.41");
         }
+    }
+
+    public void updateBase(String base){
+        this.state.baseState.setBase(base);
+        this.loadState(state);
+    }
+
+    public BaseUrlState getBaseState() {
+        return state.baseState;
     }
 }

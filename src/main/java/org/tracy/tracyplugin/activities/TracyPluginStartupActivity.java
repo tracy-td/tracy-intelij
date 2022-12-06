@@ -5,6 +5,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupActivity;
 import org.jetbrains.annotations.NotNull;
 import org.tracy.tracyplugin.notification.TracyNotification;
+import org.tracy.tracyplugin.services.ProjectStateService;
+
+import java.util.Objects;
 
 /**
  * This class is responsible for show the notification always the plugin started

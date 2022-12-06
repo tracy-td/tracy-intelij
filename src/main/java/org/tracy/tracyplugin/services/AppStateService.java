@@ -34,4 +34,5 @@ public class AppStateService  implements PersistentStateComponent<AppState> {
                 .map(ColorSettings::new)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
 }
