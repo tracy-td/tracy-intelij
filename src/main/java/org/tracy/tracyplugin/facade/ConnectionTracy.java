@@ -21,8 +21,7 @@ public class ConnectionTracy {
         ProjectStateService projectStateService = ProjectStateService.getInstance(project);
 
         assert projectStateService != null;
-        String tracyBaseUrl = projectStateService.getBaseState().getBase() + "/api/v1/classification?name=%s";
-        System.out.println("URL TRACCY" + tracyBaseUrl);
+        String tracyBaseUrl = projectStateService.getBaseState().getBase() + "api/v1/classification?name=%s";
         String searchUrl = String.format(tracyBaseUrl, URLEncoder.encode(filename, Charsets.UTF_8));
         LOG.warn("SENDING REQUEST: " + searchUrl);
 
@@ -30,7 +29,8 @@ public class ConnectionTracy {
 
         connection = (HttpURLConnection) new URI(searchUrl).toURL().openConnection();
 
-        LOG.warn("RECEBIMENTO DA REQUISIÇâo");
+        LOG.warn("STATUS CODE REQUEST: " + connection.getResponseCode());
+
         StringBuilder responseBuilder = new StringBuilder();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new GZIPInputStream(connection.getInputStream())))) {
             String line;
@@ -39,10 +39,10 @@ public class ConnectionTracy {
             }
         } catch (IOException e) {
             LOG.error(e.getMessage());
-        }
+        }//http://localhost:8081/h2-console
 
+        if(connection.getResponseCode() == 200) return Integer.parseInt(responseBuilder.toString());
         if (responseBuilder.toString().equals("")) return -1;
-
-        return Integer.parseInt(responseBuilder.toString());
+        return 1000;
     }
 }

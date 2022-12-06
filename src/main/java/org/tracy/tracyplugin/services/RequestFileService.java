@@ -20,6 +20,6 @@ public class RequestFileService {
         response = connectionTracy.connectTracyTd(project, fileName);
         LOG.warn("Response return with status code {}", response);
         if (response == -1) TracyNotification.notifyNoConnectionTracy(project, "Error to connect with tracy");
-        return 1000;
+        return response;
     }
 }

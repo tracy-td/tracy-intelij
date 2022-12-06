@@ -13,7 +13,7 @@ public class BaseUrlState {
 
     @SuppressWarnings({"UnusedDeclaration"})
     public BaseUrlState() {
-        this.base = "http://localhost:8080";
+        this.base = "http://td.phoebus.local/";
     }
 
     public BaseUrlState(String base) {
