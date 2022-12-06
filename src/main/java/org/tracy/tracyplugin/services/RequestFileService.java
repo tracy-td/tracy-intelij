@@ -18,7 +18,7 @@ public class RequestFileService {
         Integer response;
         LOG.warn("Send a request for fileName: {}", fileName);
         response = connectionTracy.connectTracyTd(project, fileName);
-        LOG.warn("Response return with status code {}", response);
+        LOG.warn("Response return with classification {}", response);
         if (response == -1) TracyNotification.notifyNoConnectionTracy(project, "Error to connect with tracy");
         return response;
     }
