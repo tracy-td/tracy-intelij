@@ -1,6 +1,6 @@
 # Artifact Priority Sorter for [Tracy-TD](https://tracy-td.github.io/)
 ![license](https://img.shields.io/bower/l/bootstrap)
-## Plugin for [JetBrains IDE](https://www.jetbrains.com/).
+## Plugin for [IntelliJ IDE](https://www.jetbrains.com/idea/).
 
 Highlights project files in color according to their **Tracy-TD** classification.
 
